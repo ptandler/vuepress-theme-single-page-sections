@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"61a38247","1":"7d20ccfe","2":"f99c5ac4","3":"b7218606","4":"0778009b","5":"66fc530c","6":"18d6bd60","7":"8179e695","8":"09af1eef","9":"ec95dac3","10":"8f1608fc","11":"dfc5d06f","12":"dfbc16e2","13":"7bf2eee2","14":"ec01c152","15":"db028519","16":"81bb0b16","17":"73108dfc","18":"2016388f"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"61a38247","1":"7d20ccfe","2":"f99c5ac4","3":"b7218606","4":"0778009b","5":"66fc530c","6":"18d6bd60","7":"8179e695","8":"09af1eef","9":"ec95dac3","10":"8f1608fc","11":"dfc5d06f","12":"dfbc16e2","13":"7bf2eee2","14":"ec01c152","15":"db028519","16":"d9e668b3","17":"73108dfc","18":"2016388f"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -203,7 +203,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/";
+/******/ 	__webpack_require__.p = "/vuepress-theme-single-page-sections/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -690,7 +690,7 @@ __webpack_require__.r(__webpack_exports__);
 const siteData = {
   "title": "Example Site for vuepress-theme-single-page-sections",
   "description": "This illustrates how the vuepress-theme-single-page-sections Vuepress theme can be used",
-  "base": "/",
+  "base": "/vuepress-theme-single-page-sections/",
   "pages": [
     {
       "title": "My Resume",
@@ -1028,7 +1028,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.2.0",
-  hash: "2301b8d"
+  hash: "5d4067d"
 }
 
 router.onReady(() => {
@@ -18809,4 +18809,4 @@ module.exports = __webpack_require__(/*! C:\usr\src\homepage\vuepress-theme-sing
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.21f54e8c.js.map
+//# sourceMappingURL=app.a527c09a.js.map
