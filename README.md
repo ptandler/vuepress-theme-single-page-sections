@@ -3,7 +3,10 @@
 This these extends the VuePress default theme `@vuepress/theme-default` for a layout for single page sites that contain several sections, each covering at least one view height.
 I this this is easier described with a picture:
 
-.....
+![vuepress-theme-single-page-sections on desktop](./example/desktop.png)
+
+![vuepress-theme-single-page-sections on mobile](./example/mobile.png)
+![vuepress-theme-single-page-sections on mobile with menu open](./example/mobile-with-menu.png)
 
 I developed this theme as the basis for my personal homepage. So it can well be used to put your resume online.
 
@@ -67,4 +70,4 @@ The `sidebarImage` is optional. If defined, this image is included in the sideba
 
 In the [`example` directory](./example/README.md), there is a simple sample project.
 
-You can see this live at ...
+You can see this live at https://ptandler.github.io/vuepress-theme-single-page-sections/

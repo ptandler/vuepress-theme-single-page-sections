@@ -30,7 +30,7 @@ If you want to contact me, you can reach me at a number of places:
 <v-icon name="book-open" style="float: right; margin: 0 0 1rem 1rem;" scale="4" />
 You can use font awesome icons. But remember that you need to import the icons that you are using, e.g. in your `.vuepress/enhanceApp.js`:
 
-<<< @/docs/.vuepress/enhanceApp.js{1}
+<<< @/example/.vuepress/enhanceApp.js{1}
 
 </PageSection>
 

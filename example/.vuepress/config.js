@@ -26,6 +26,7 @@ appleIconLinks = appleSizes.map((size) => [
 module.exports = {
   title: "Example Site for vuepress-theme-single-page-sections",
   description: "This illustrates how the vuepress-theme-single-page-sections Vuepress theme can be used",
+  base: "/vuepress-theme-single-page-sections/",
   dest: "docs",
   head: [
     ...headIconLinks,
