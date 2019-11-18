@@ -29,6 +29,7 @@ module.exports = {
   base: "/vuepress-theme-single-page-sections/",
   dest: "docs",
   head: [
+/* // uncomment if you want to use PWA manifest and icons
     ...headIconLinks,
     ["link", { rel: "manifest", href: "manifest.webmanifest" }],
     ["meta", { name: "theme-color", content: themeColor }],
@@ -38,6 +39,7 @@ module.exports = {
     ["link", { rel: "mask-icon", href: "icons.svg", color: themeColor }],
     ["meta", { name: "msapplication-TileImage", content: "icon-144x144.png" }],
     ["meta", { name: "msapplication-TileColor", content: "#000000" }],
+*/
   ],
   theme: "single-page-sections",
   themeConfig: {

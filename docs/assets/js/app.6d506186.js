@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"61a38247","1":"7d20ccfe","2":"f99c5ac4","3":"b7218606","4":"0778009b","5":"66fc530c","6":"18d6bd60","7":"8179e695","8":"09af1eef","9":"ec95dac3","10":"8f1608fc","11":"dfc5d06f","12":"dfbc16e2","13":"7bf2eee2","14":"ec01c152","15":"db028519","16":"d9e668b3","17":"73108dfc","18":"2016388f"}[chunkId] + ".js"
+/******/ 		return __webpack_require__.p + "assets/js/" + ({}[chunkId]||chunkId) + "." + {"0":"61a38247","1":"529ab3f9","2":"f99c5ac4","3":"b7218606","4":"0778009b","5":"66fc530c","6":"18d6bd60","7":"8179e695","8":"09af1eef","9":"ec95dac3","10":"8f1608fc","11":"dfc5d06f","12":"dfbc16e2","13":"7bf2eee2","14":"ec01c152","15":"db028519","16":"d9e668b3","17":"73108dfc","18":"2016388f"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -502,9 +502,9 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-GitHub", () => Pro
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-Icon", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(12)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/Icon */ "./global-components/Social/Icon.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-Keybase", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/Keybase */ "./global-components/Social/Keybase.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-LinkedIn", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/LinkedIn */ "./global-components/Social/LinkedIn.vue")))
-vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-ORCID", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/ORCID */ "./global-components/Social/ORCID.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-ResearchGate", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/ResearchGate */ "./global-components/Social/ResearchGate.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-Telegram", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/Telegram */ "./global-components/Social/Telegram.vue")))
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-ORCID", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/ORCID */ "./global-components/Social/ORCID.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-Twitter", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/Twitter */ "./global-components/Social/Twitter.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Social-XING", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, /*! ./global-components/Social/XING */ "./global-components/Social/XING.vue")))
 vue__WEBPACK_IMPORTED_MODULE_0__["default"].component("Badge", () => Promise.all(/*! import() */[__webpack_require__.e("styles"), __webpack_require__.e(14)]).then(__webpack_require__.bind(null, /*! ./node_modules/@vuepress/theme-default/global-components/Badge */ "./node_modules/@vuepress/theme-default/global-components/Badge.vue")))
@@ -1028,7 +1028,7 @@ const { app, router } = Object(_app__WEBPACK_IMPORTED_MODULE_0__["createApp"])(f
 
 window.__VUEPRESS__ = {
   version: "1.2.0",
-  hash: "5d4067d"
+  hash: "071d1fe"
 }
 
 router.onReady(() => {
@@ -18809,4 +18809,4 @@ module.exports = __webpack_require__(/*! C:\usr\src\homepage\vuepress-theme-sing
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.a527c09a.js.map
+//# sourceMappingURL=app.6d506186.js.map

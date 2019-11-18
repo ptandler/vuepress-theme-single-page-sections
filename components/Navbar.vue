@@ -22,7 +22,7 @@
       v-if="$frontmatter.sidebarImage"
       class="img-profile img-profile-navbar"
       :class="imgProfileClasses"
-      :src="$frontmatter.sidebarImage"
+      :src="$withBase($frontmatter.sidebarImage)"
     />
     <!-- end added -->
 
