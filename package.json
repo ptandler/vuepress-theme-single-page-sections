@@ -1,0 +1,29 @@
+{
+  "name": "vuepress-theme-single-page-sections",
+  "version": "0.1.0",
+  "description": "A VuePress theme that extends the default theme by sections to create single page layouts with several sections combined on one page",
+  "main": "index.js",
+  "repository": "https://github.com/ptandler/vuepress-theme-single-page-sections",
+  "author": "Peter Tandler",
+  "keywords": [
+    "vue",
+    "vuepress"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "docs:dev": "vuepress dev --debug example",
+    "docs:build": "vuepress build --debug example",
+    "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
+  },
+  "dependencies": {
+    "@vuepress/theme-default": "^1.2.0",
+    "vue-awesome": "^4.0.2",
+    "vuepress": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "lint-staged": "^9.4.3",
+    "prettier": "^1.19.1"
+  }
+}
