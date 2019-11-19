@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "description": "A VuePress theme that extends the default theme by sections to create single page layouts with several sections combined on one page",
   "main": "index.js",
-  "repository": "https://github.com/ptandler/vuepress-theme-single-page-sections",
-  "author": "Peter Tandler",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptandler/vuepress-theme-single-page-sections.git"
+  },
+  "homepage": "https://github.com/ptandler/vuepress-theme-single-page-sections#readme",
+  "bugs": "https://github.com/ptandler/vuepress-theme-single-page-sections/issues",
+  "author": "Peter Tandler (https://github.com/ptandler)",
   "keywords": [
     "vue",
     "vuepress"
@@ -18,6 +23,7 @@
   },
   "dependencies": {
     "@vuepress/theme-default": "^1.2.0",
+    "vue": "^2.6.10",
     "vue-awesome": "^4.0.2",
     "vuepress": "^1.2.0"
   },

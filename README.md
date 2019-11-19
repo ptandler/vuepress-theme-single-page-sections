@@ -3,7 +3,11 @@
 This these extends the VuePress default theme `@vuepress/theme-default` for a layout for single page sites that contain several sections, each covering at least one view height.
 I this this is easier described with a picture:
 
+**Desktop version:**
+
 ![vuepress-theme-single-page-sections on desktop](./example/desktop.png)
+
+**Mobile version:**
 
 ![vuepress-theme-single-page-sections on mobile](./example/mobile.png)
 ![vuepress-theme-single-page-sections on mobile with menu open](./example/mobile-with-menu.png)
@@ -71,3 +75,9 @@ Some content... this time using the markdown "custom container" syntax.
 ```
 
 The `sidebarImage` is optional. If defined, this image is included in the sidebar above the navigation links. In the mobil version, it is included in the navbar instead, as the sidebar is hidden then.
+
+## Implementation
+
+This theme overwrites two components from the default theme:
+- `components/Navbar.vue`
+- `components/Sidebar.vue`
