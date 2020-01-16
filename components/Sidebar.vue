@@ -2,12 +2,12 @@
   <aside class="sidebar">
     <NavLinks />
     <div class="sidebar-content">
-        <img
+      <img
         v-if="$frontmatter.sidebarImage"
-          class="img-profile img-profile-sidebar"
-          :src="$withBase($frontmatter.sidebarImage)"
-          alt="$frontmatter.sidebarImageAlt"
-        />
+        class="img-profile img-profile-sidebar"
+        :src="$withBase($frontmatter.sidebarImage)"
+        alt="$frontmatter.sidebarImageAlt"
+      />
       <slot name="top" />
       <SidebarLinks :depth="0" :items="myItems" />
       <slot name="bottom" />
@@ -66,7 +66,7 @@ export default {
 .sidebar {
   display: flex;
   flex-direction: column;
-  background-color: $sidebarBackgroundColor;
+  background-color: $sidebarBackgroundColor !important; // important needed to fix a CSS processing error in production mode
   text-align: center;
 
   ul {

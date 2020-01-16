@@ -27,6 +27,7 @@ You can see this live at https://ptandler.github.io/vuepress-theme-single-page-s
 This theme uses VuePress v1.
 
 Install the theme:
+
 ```cmd
 yarn install -D vuepress-theme-single-page-sections
 ```
@@ -65,7 +66,7 @@ Some content...
 
 </PageSection>
 
------
+---
 
 ::: section Second Section
 
@@ -79,5 +80,6 @@ The `sidebarImage` is optional. If defined, this image is included in the sideba
 ## Implementation
 
 This theme overwrites two components from the default theme:
+
 - `components/Navbar.vue`
 - `components/Sidebar.vue`

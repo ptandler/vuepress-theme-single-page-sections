@@ -1,7 +1,7 @@
 <template>
   <a :href="url" target="_blank" :title="title ? title : text">
     <v-icon :name="icon" scale="1" />
-    {{text}}
+    {{ text }}
   </a>
 </template>
 <script>

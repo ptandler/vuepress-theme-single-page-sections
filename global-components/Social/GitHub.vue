@@ -14,7 +14,7 @@ export default {
       return "brands/github"
     },
     iconColor() {
-      return "#171515"  // github banner color #24292e
+      return "#171515" // github banner color #24292e
     },
     url() {
       return `https://www.github.com/${this.id}`

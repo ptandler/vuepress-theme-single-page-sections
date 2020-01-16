@@ -1,7 +1,7 @@
 <template>
   <section class="page-section header-anchor" :id="myId">
     <div class="section-content">
-      <h2>{{title}}</h2>
+      <h2>{{ title }}</h2>
       <slot />
     </div>
   </section>

@@ -3,18 +3,14 @@
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')" />
 
     <router-link :to="$localePath" class="home-link">
-      <img
-        class="logo"
-        v-if="$site.themeConfig.logo"
-        :src="$withBase($site.themeConfig.logo)"
-        :alt="$siteTitle"
-      />
+      <img class="logo" v-if="$site.themeConfig.logo" :src="$withBase($site.themeConfig.logo)" :alt="$siteTitle" />
       <span
         ref="siteName"
         class="site-name"
         v-if="$page.title || $siteTitle"
         :class="{ 'can-hide': $site.themeConfig.logo }"
-      >{{ $page.title || $siteTitle }}</span>
+        >{{ $page.title || $siteTitle }}</span
+      >
     </router-link>
 
     <!-- begin added -->
@@ -28,14 +24,16 @@
 
     <div
       class="links"
-      :style="linksWrapMaxWidth ? {
-        'max-width': linksWrapMaxWidth + 'px'
-      } : {}"
+      :style="
+        linksWrapMaxWidth
+          ? {
+              'max-width': linksWrapMaxWidth + 'px',
+            }
+          : {}
+      "
     >
       <AlgoliaSearchBox v-if="isAlgoliaSearch" :options="algolia" />
-      <SearchBox
-        v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
-      />
+      <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false" />
       <NavLinks class="can-hide" />
     </div>
   </header>
@@ -62,7 +60,7 @@ const Navbar = extend({}, ParentNavbar, {
     if (ParentNavbar.mounted) {
       ParentNavbar.mounted.call(this)
     }
-    console.log("register handleScroll")
+    // console.log("register handleScroll")
     this.handleThrottledScroll = throttle(this.handleScroll, 250)
     window.addEventListener("scroll", this.handleThrottledScroll)
   },
@@ -70,7 +68,7 @@ const Navbar = extend({}, ParentNavbar, {
     if (ParentNavbar.beforeDestroy) {
       ParentNavbar.beforeDestroy.call(this)
     }
-    console.log("remove handleScroll")
+    // console.log("remove handleScroll")
     window.removeEventListener("scroll", this.handleThrottledScroll)
   },
   methods: extend({}, ParentNavbar.methods, {

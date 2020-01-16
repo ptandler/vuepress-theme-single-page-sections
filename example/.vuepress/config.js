@@ -29,7 +29,7 @@ module.exports = {
   base: "/vuepress-theme-single-page-sections/",
   dest: "docs",
   head: [
-/* // uncomment if you want to use PWA manifest and icons
+    /* // uncomment if you want to use PWA manifest and icons
     ...headIconLinks,
     ["link", { rel: "manifest", href: "manifest.webmanifest" }],
     ["meta", { name: "theme-color", content: themeColor }],

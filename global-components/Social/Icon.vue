@@ -1,7 +1,7 @@
 <template>
   <a :href="url" target="_blank" :alt="title">
     <v-icon :name="name" :color="getColor" :scale="scale ? scale : 2" />
-    {{text}}
+    {{ text }}
   </a>
 </template>
 <script>

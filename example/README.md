@@ -23,7 +23,7 @@ If you want to contact me, you can reach me at a number of places:
 
 </PageSection>
 
------
+---
 
 <PageSection title="Font Awesome Icons">
 
@@ -34,14 +34,14 @@ You can use font awesome icons. But remember that you need to import the icons t
 
 </PageSection>
 
------
+---
 
 ::: section Not included in TOC
 By the way: This theme also defines a [custom container](https://vuepress.vuejs.org/guide/markdown.html#custom-containers) that you can use to create the page sections.
 But for technical reasons they won't show up in the navigation links.
 :::
 
------
+---
 
 <PageSection title="Credits">
 
