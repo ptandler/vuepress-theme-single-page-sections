@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-single-page-sections",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A VuePress theme that extends the default theme by sections to create single page layouts with several sections combined on one page",
   "main": "index.js",
   "repository": {
