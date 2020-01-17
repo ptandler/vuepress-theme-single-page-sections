@@ -19,6 +19,7 @@
   "scripts": {
     "docs:dev": "vuepress dev --debug example",
     "docs:build": "vuepress build --debug example",
+    "postversion": "git push --tags",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
   },
   "dependencies": {

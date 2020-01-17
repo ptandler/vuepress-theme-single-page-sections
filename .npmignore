@@ -1,3 +1,4 @@
 .idea/
 docs/
 *.tgz
+yarn-error.log
