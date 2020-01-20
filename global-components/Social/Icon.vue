@@ -1,11 +1,13 @@
 <template>
   <a :href="url" target="_blank" :alt="title">
-    <v-icon :name="name" :color="getColor" :scale="scale ? scale : 2" />
+    <span class="icon">
+      <v-icon :name="name" :color="getColor" :scale="scale ? scale : 2" />
+    </span>
     {{ text }}
   </a>
 </template>
 <script>
-// import VIcon from "vue-awesome/components/Icon"
+// import VIcon from "vue-awesome/components/Icon" // imported globally in enhanceApp.js
 
 export default {
   name: "Icon",
@@ -22,7 +24,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-a {
+.icon {
   display: inline-flex;
   background-color: $white;
   border-radius: 100%;
@@ -36,7 +38,7 @@ a {
   }
 }
 
-a.inline {
+.inline .icon {
   background-color: transparent;
   height: 1em;
   width: 1em;

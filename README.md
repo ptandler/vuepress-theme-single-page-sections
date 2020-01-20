@@ -16,6 +16,28 @@ I developed this theme as the basis for my personal homepage. So it can well be 
 
 It also defines a couple of social icons that you can use to link to your online profiles.
 
+## Features
+
+* Vue components for social media links as icons, with icons taken from font-awesome
+* Predefined components for: Facebook, Twitter, Telegram, LinkedIn, XING, Keybase, ORCID, GitHub, e.g.
+  ```md
+  <Social-LinkedIn id="petertandler" />
+  <Social-GitHub id="ptandler" />
+  ```
+  <br/>
+  <Social-LinkedIn id="petertandler" />
+  <Social-GitHub id="ptandler" />
+* Vue components for contact information (email, phone) that generate obfuscated text and links to provide some challenges for harvesting bots and to avoid spam:
+  ```md
+  <Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
+  <br/>
+  <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
+  ```
+  <br/>
+  <Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
+  <br/>
+  <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
+
 ## Example
 
 In the [`example` directory](./example/README.md), there is a simple sample project.
@@ -76,6 +98,11 @@ Some content... this time using the markdown "custom container" syntax.
 ```
 
 The `sidebarImage` is optional. If defined, this image is included in the sidebar above the navigation links. In the mobil version, it is included in the navbar instead, as the sidebar is hidden then.
+
+## Customization
+
+The colors used are defined in `styles\palette.styl` and can be customized to fit your personal preferences.
+
 
 ## Implementation
 

@@ -9,7 +9,7 @@ sidebarImageAlt: Dummy picture of a person
 
 Nice that you're here! You could use this layout for your personal homepage and tell the world something about you.
 
-If you want to contact me, you can reach me at a number of places:
+The template provides predefined Vue components that you can easily use to link all your social profiles:
 
 <Social-LinkedIn id="myid" />
 <Social-XING id="myid" />
@@ -20,6 +20,12 @@ If you want to contact me, you can reach me at a number of places:
 <Social-Keybase id="myid" />
 <Social-ResearchGate id="myid" />
 <Social-ORCID id="myid" />
+
+And also, you can include your contact information that will be obfuscated to reduce spam:
+
+<Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
+<br/>
+<Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
 
 </PageSection>
 
