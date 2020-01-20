@@ -1,5 +1,6 @@
 <template>
-  <section class="page-section header-anchor" :id="myId">
+  <section class="page-section" :id="myId">
+    <a :href="'#'+myId" aria-hidden="true" class="header-anchor">#</a>
     <div class="section-content">
       <h2>{{ title }}</h2>
       <slot />
@@ -30,6 +31,12 @@ export default {
     min-height: 100vh;
     width: 100%;
     scroll-snap-align: start;
+
+    .header-anchor {
+      display: none;
+      margin: 0;
+      padding: 0;
+    }
 
     .section-content {
       padding: 2em;
