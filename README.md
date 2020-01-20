@@ -24,19 +24,12 @@ It also defines a couple of social icons that you can use to link to your online
   <Social-LinkedIn id="petertandler" />
   <Social-GitHub id="ptandler" />
   ```
-  <br/>
-  <Social-LinkedIn id="petertandler" />
-  <Social-GitHub id="ptandler" />
 * Vue components for contact information (email, phone) that generate obfuscated text and links to provide some challenges for harvesting bots and to avoid spam:
   ```md
   <Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
   <br/>
   <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
   ```
-  <br/>
-  <Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
-  <br/>
-  <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
 
 ## Example
 
