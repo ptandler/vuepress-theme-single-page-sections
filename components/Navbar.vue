@@ -19,6 +19,7 @@
       class="img-profile img-profile-navbar"
       :class="imgProfileClasses"
       :src="$withBase($frontmatter.sidebarImage)"
+      :alt="$frontmatter.sidebarImageAlt"
     />
     <!-- end added -->
 
