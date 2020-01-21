@@ -1,5 +1,5 @@
 <template>
-  <a :href="url" target="_blank" :alt="title">
+  <a :href="url" target="_blank" :title="title" rel="noopener noreferrer">
     <span class="icon">
       <v-icon :name="name" :color="getColor" :scale="scale ? scale : 2" />
     </span>
