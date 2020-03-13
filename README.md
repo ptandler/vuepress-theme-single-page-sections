@@ -26,10 +26,25 @@ It also defines a couple of social icons that you can use to link to your online
   ```
 * Vue components for contact information (email, phone) that generate obfuscated text and links to provide some challenges for harvesting bots and to avoid spam:
   ```md
-  <Contact-Phone title="Telefon" country="49" city="1234" number="56789" />
+  <Contact-Phone title="Phone" country="49" city="1234" number="56789" />
   <br/>
   <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
   ```
+* Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will 
+  be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
+  ```md
+  <Contact-DetailsContainer
+    :email_as_icon="false" 
+    :phone_as_icon="false"
+    linkedin="petertandler"
+    xing="Peter_Tandler"
+    github="ptandler"
+    keybase="ptandler"
+    twitter="PeterTandler"
+    researchgate="Peter_Tandler"
+    />
+  ```
+  If called like: https://ptandler.github.io/vuepress-theme-single-page-sections/?email=myname@example.com&skype=mySkypeId
 
 ## Example
 

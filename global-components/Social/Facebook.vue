@@ -9,13 +9,13 @@ export default {
   name: "Facebook",
   props: ["id", "scale", "text"],
   components: { Icon },
+  data() {
+    return {
+      iconName: "brands/facebook",
+      iconColor: "#3B5998",
+    }
+  },
   computed: {
-    iconName() {
-      return "brands/facebook"
-    },
-    iconColor() {
-      return "#3B5998"
-    },
     url() {
       return `https://www.facebook.com/${this.id}`
     },

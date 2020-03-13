@@ -31,6 +31,30 @@ And also, you can include your contact information that will be obfuscated to re
 
 ---
 
+<PageSection title="Privacy-friendly Contact Information">
+
+Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will 
+be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
+
+<Contact-DetailsContainer
+    :email_as_icon="false" 
+    :phone_as_icon="false"
+    linkedin="myid"
+    xing="myid"
+    github="myid"
+    keybase="myid"
+    twitter="myid"
+    researchgate="myid"
+    />
+
+The "private" contact information can be passed via URL:
+If called like: https://ptandler.github.io/vuepress-theme-single-page-sections/?email=myname@example.com&skype=mySkypeId
+the email and skype information will be included in the Contact-DetailsContainer- and also stored in localStorage.
+
+</PageSection>
+
+---
+
 <PageSection title="Font Awesome Icons">
 
 <v-icon name="book-open" style="float: right; margin: 0 0 1rem 1rem;" scale="4" />

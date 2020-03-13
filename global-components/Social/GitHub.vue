@@ -9,13 +9,13 @@ export default {
   name: "GitHub",
   props: ["id", "scale"],
   components: { Icon },
+  data() {
+    return {
+      iconName: "brands/github",
+      iconColor: "#171515", // github banner color #24292e
+    }
+  },
   computed: {
-    iconName() {
-      return "brands/github"
-    },
-    iconColor() {
-      return "#171515" // github banner color #24292e
-    },
     url() {
       return `https://www.github.com/${this.id}`
     },

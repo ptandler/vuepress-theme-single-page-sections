@@ -1,0 +1,165 @@
+<template>
+  <div>
+    <!-- Phone and Email can be display inline as icons only (`email.icon_only = true`) or as single line showing text -->
+    <Contact-Phone
+      v-if="my_phone && my_phone.number"
+      :title="my_phone.title"
+      :country="my_phone.country"
+      :city="my_phone.city"
+      :number="my_phone.number"
+      :icon_only="phone_as_icon"
+      :obfuscate="!my_phone_plaintext"
+    />
+    <br v-if="my_phone && my_phone.number && !phone_as_icon" />
+    <Contact-Email
+      v-if="my_email && (my_email.email || my_email.name)"
+      :email="my_email.email"
+      :name="my_email.name"
+      :domain="my_email.domain"
+      :title="my_email.title"
+      :icon_only="email_as_icon"
+      :obfuscate="!my_email_plaintext"
+    />
+    <br v-if="my_email && (my_email.email || my_email.name) && !email_as_icon" />
+    <Social-Facebook v-if="my_facebook" :id="my_facebook" />
+    <Social-LinkedIn v-if="my_linkedin" :id="my_linkedin" />
+    <Social-XING v-if="my_xing" :id="my_xing" />
+    <Social-Twitter v-if="my_twitter" :id="my_twitter" />
+    <Social-Mastodon v-if="my_mastodon" :id="my_mastodon" />
+    <Social-Telegram v-if="my_telegram" :id="my_telegram" />
+    <Social-Skype v-if="my_skype" :id="my_skype" />
+    <Social-Keybase v-if="my_keybase" :id="my_keybase" />
+    <Social-GitHub v-if="my_github" :id="my_github" />
+    <Social-ResearchGate v-if="my_researchgate" :id="my_researchgate" />
+    <Social-ORCID v-if="my_orcid" :id="my_orcid" />
+  </div>
+</template>
+<script>
+const attributes = {
+  phone: ["country", "city", "number", "title"],
+  email: ["email", "name", "domain", "title"],
+  facebook: null,
+  linkedin: null,
+  xing: null,
+  twitter: null,
+  mastodon: null,
+  telegram: null,
+  whatsapp: null,
+  skype: null,
+  keybase: null,
+  github: null,
+  researchgate: null,
+  orcid: null,
+}
+
+export default {
+  name: "ContactDetailsContainer",
+  props: [
+    "phone", "phone_as_icon",
+    "email", "email_as_icon",
+    "facebook",
+    "linkedin",
+    "xing",
+    "twitter", "mastodon",
+    "telegram",
+    "whatsapp",
+    "skype",
+    "keybase",
+    "github",
+    "stackoverflow",
+    "researchgate",
+    "orcid",
+  ],
+  data() {
+    // init the attributes with the component's parameters
+    return {
+      my_phone: this.phone,
+      my_email: this.email,
+      my_facebook: this.facebook,
+      my_linkedin: this.linkedin,
+      my_xing: this.xing,
+      my_twitter: this.twitter,
+      my_telegram: this.telegram,
+      my_mastodon: this.mastodon,
+      my_whatsapp: this.whatsapp,
+      my_skype: this.skype,
+      my_keybase: this.keybase,
+      my_github: this.github,
+      my_stackoverflow: this.stackoverflow,
+      my_researchgate: this.researchgate,
+      my_orcid: this.orcid,
+    }
+  },
+  mounted() {
+    // https://stackoverflow.com/a/57479373/1480587
+    // this.$route.query.yourProperty
+    this.checkAllAttributes()
+  },
+
+  methods: {
+    /**
+     * iterate over all attributes of all contact elements to check of passed or stored values
+     */
+    checkAllAttributes() {
+      // first handle some special cases with aliases for URL parameters
+      this.checkParamAndStorage("email", "email", "email")
+
+      // then check all other attributes
+      for (const category in attributes) {
+        if (attributes.hasOwnProperty(category)) {
+          const names = attributes[category]
+          if (names) {
+            for (const name of names) {
+              this.checkParamAndStorage(category, name)
+            }
+          } else {
+            // if no array defined, no sub-attributs are available
+            this.checkParamAndStorage(category, null)
+          }
+        }
+      }
+    },
+
+    /**
+     * change data value to value from URL query parameter or the one store in local storage
+     */
+    checkParamAndStorage(category, name, url_param_alias) {
+      // console.debug(this.$route.query)
+      const key = name ? category + "." + name : category
+      const paramValue = this.$route.query[url_param_alias || key]
+      console.debug(key, " = ", paramValue)
+      if (paramValue) {
+        // add to local storage
+        localStorage.setItem(key, JSON.stringify(paramValue))
+      }
+      const storageValue = localStorage.getItem(key)
+      console.debug(key, " = ", storageValue)
+      if (storageValue) {
+        const value = JSON.parse(storageValue)
+        // stored or passed value found, use this!
+        const my_category = "my_" + category
+        if (!this[my_category]) {
+          this[my_category] = {}
+        }
+        if (name) {
+          this.$set(this[my_category], name, value)
+        } else {
+          this[my_category] = value
+        }
+
+        // and now turn off obfuscation if using value from URL or localStorage
+        this[my_category + "_plaintext"] = true
+      }
+    },
+  },
+
+  watch: {
+    // https://router.vuejs.org/guide/essentials/dynamic-matching.html#reacting-to-params-changes
+    $route(to, from) {
+      // react to route changes...
+      console.info("route changed from ", from, " to ", to)
+      this.checkAllAttributes()
+    },
+  },
+}
+</script>
