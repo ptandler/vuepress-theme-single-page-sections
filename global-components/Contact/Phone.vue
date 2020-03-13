@@ -1,17 +1,17 @@
 <template>
-<Contact icon="phone" :title="title || 'Phone'" :text="text" :url="url"/>
+  <Contact icon="phone" :title="title || 'Phone'" :text="text" :url="url" :icon_only="icon_only" :scale="scale" :obfuscate="obfuscate" />
 </template>
 <script>
 import "vue-awesome/icons/phone"
- function removeNonNumbers(phone) {
-    return phone instanceof String ? phone.replace(/\D/g, "") : phone
-  }
+function removeNonNumbers(phone) {
+  return phone instanceof String ? phone.replace(/\D/g, "") : phone
+}
 export default {
   /**
    * strip everything that is not a digit from the phone number
    */
-   name: "Phone",
-  props: ["country", "city", "number", "title"],
+  name: "Phone",
+  props: ["country", "city", "number", "title", "scale", "icon_only", "obfuscate"],
   computed: {
     text() {
       return ["+", this.country || "49", " ", this.city, " ", this.number]

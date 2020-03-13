@@ -1,13 +1,36 @@
 <template>
-  <a :href="maybeObfuscatedHref" target="_blank" :title="title ? title : mayBeObfuscatedText">
+  <icon
+    v-if="icon_only"
+    :name="icon"
+    :color="iconColor"
+    :title="title || mayBeObfuscatedText"
+    :url="maybeObfuscatedHref"
+    :scale="scale"
+  />
+  <a v-else :href="maybeObfuscatedHref" target="_blank" :title="title || mayBeObfuscatedText">
     <v-icon :name="icon" scale="1" />
     <span v-html="mayBeObfuscatedText" class="protected" />
   </a>
 </template>
 <script>
+import Icon from "./Social/Icon"
 export default {
   name: "Contact",
-  props: ["text", "icon", "url", "title"],
+  components: { Icon },
+  props: {
+    text: {},
+    icon: String,
+    url: {},
+    title: String,
+    icon_only: Boolean,
+    scale: Number,
+    obfuscate: { type: Boolean, default: true },
+  },
+  data() {
+    return {
+      iconColor: "var(--primary)",
+    }
+  },
   computed: {
     /**
      * if an array is passed as text or url, it is concatenated
@@ -15,17 +38,23 @@ export default {
      * include the unofuscated email
      */
     maybeObfuscatedHref() {
+      let counter = 1
       return this.url instanceof Array
-        ? "javascript:location.href=" +
-            JSON.stringify(this.url.slice(0).reverse()).replace(/","/g, '", /*' + Date.now() + '*/"') +
+        ? this.obfuscate
+          ? "javascript:location.href=" +
+            JSON.stringify(this.url.slice(0).reverse()).replace(/","/g, '", /*' + Date.now() * counter++ + '*/"') +
             '.reverse().join("")'
+          : this.url.join("")
         : this.url
     },
     mayBeObfuscatedText() {
+      let counter = 1
       return this.text instanceof Array
-        ? this.text
-            .map((str) => `<span class="b">${str}</span>`)
-            .join("<span class='a'>" + Date.now() + "</span>")
+        ? this.obfuscate
+          ? this.text
+              .map((str) => `<span class="b">${str}</span>`)
+              .join("<span class='a'>" + Date.now() * counter++ + "</span>")
+          : this.text.join("")
         : this.text
     },
   },
