@@ -24,6 +24,11 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
+
+.theme-default-content:not(.custom) a:hover {
+    text-decoration: none;
+}
+
 .icon {
   display: inline-flex;
   background-color: $white;

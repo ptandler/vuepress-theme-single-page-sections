@@ -33,9 +33,10 @@ It also defines a couple of social icons that you can use to link to your online
 * Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will 
   be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
   ```md
-  <Contact-DetailsContainer
+  <Contact-Details
     :email_as_icon="false" 
     :phone_as_icon="false"
+    :mobile_as_icon="false"
     linkedin="petertandler"
     xing="Peter_Tandler"
     github="ptandler"
@@ -44,7 +45,13 @@ It also defines a couple of social icons that you can use to link to your online
     researchgate="Peter_Tandler"
     />
   ```
+
   If called like: https://ptandler.github.io/vuepress-theme-single-page-sections/?email=myname@example.com&skype=mySkypeId
+
+  The pattern for phone numbers is: `+country-city-number-ext` where _country_ and _city_ are optional and _ext_ has no special treatment but will be part of the number. This pattern allows consistent formatting of phone numbers. Make sure that the "+" is escaped properly as '%2B' 
+  (some browsers might convert it into a space instead).
+  
+  Example https://ptandler.github.io/vuepress-theme-single-page-sections/?phone=%2B49-1234-56789-0
 
 ## Example
 

@@ -8,14 +8,14 @@
     :scale="scale"
   />
   <a v-else :href="maybeObfuscatedHref" target="_blank" :title="title || mayBeObfuscatedText">
-    <v-icon :name="icon" scale="1" />
+    <v-icon :name="icon" scale="1" class="inline-icon" />
     <span v-html="mayBeObfuscatedText" class="protected" />
   </a>
 </template>
 <script>
-import Icon from "./Social/Icon"
+import Icon from "../Social/Icon"
 export default {
-  name: "Contact",
+  name: "Contact-Information",
   components: { Icon },
   props: {
     text: {},
@@ -66,7 +66,11 @@ export default {
   vertical-align: middle;
 }
 
-// using >>> combinator to allow scoped css for generated html, see https://stackoverflow.com/a/44849563/1480587
+a .inline-icon {
+  width: 2em
+}
+
+// using >>> combinator to provide css for generated html and by-pass css scoping, see https://stackoverflow.com/a/44849563/1480587
 .protected >>> .a {
   display: none;
 }

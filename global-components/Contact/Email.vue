@@ -1,5 +1,13 @@
 <template>
-  <Contact :icon="icon" :title="title || 'Email'" :text="text" :url="url" :icon_only="icon_only" :scale="scale" :obfuscate="obfuscate" />
+  <Contact-Information
+    :icon="icon"
+    :title="title || 'Email'"
+    :text="text"
+    :url="url"
+    :icon_only="icon_only"
+    :scale="scale"
+    :obfuscate="obfuscate"
+  />
 </template>
 <script>
 import "vue-awesome/icons/envelope"

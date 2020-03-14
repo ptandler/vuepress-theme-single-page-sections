@@ -7,10 +7,22 @@
       :country="my_phone.country"
       :city="my_phone.city"
       :number="my_phone.number"
+      :icon="my_phone.icon"
       :icon_only="phone_as_icon"
       :obfuscate="!my_phone_plaintext"
     />
     <br v-if="my_phone && my_phone.number && !phone_as_icon" />
+    <Contact-Phone
+      v-if="my_mobile && my_mobile.number"
+      :title="my_mobile.title || 'Mobile'"
+      :country="my_mobile.country"
+      :city="my_mobile.city"
+      :number="my_mobile.number"
+      :icon="my_mobile.icon || 'mobile'"
+      :icon_only="mobile_as_icon"
+      :obfuscate="!my_mobile_plaintext"
+    />
+    <br v-if="my_mobile && my_mobile.number && !mobile_as_icon" />
     <Contact-Email
       v-if="my_email && (my_email.email || my_email.name)"
       :email="my_email.email"
@@ -25,7 +37,8 @@
     <Social-LinkedIn v-if="my_linkedin" :id="my_linkedin" />
     <Social-XING v-if="my_xing" :id="my_xing" />
     <Social-Twitter v-if="my_twitter" :id="my_twitter" />
-    <Social-Mastodon v-if="my_mastodon" :id="my_mastodon" />
+    <Social-Mastodon v-if="my_mastodon" :url="my_mastodon" />
+    <!-- caution: Mastodon gets an URL passed, not an ID -->
     <Social-Telegram v-if="my_telegram" :id="my_telegram" />
     <Social-Skype v-if="my_skype" :id="my_skype" />
     <Social-Keybase v-if="my_keybase" :id="my_keybase" />
@@ -37,6 +50,7 @@
 <script>
 const attributes = {
   phone: ["country", "city", "number", "title"],
+  mobile: ["country", "city", "number", "title"],
   email: ["email", "name", "domain", "title"],
   facebook: null,
   linkedin: null,
@@ -53,14 +67,19 @@ const attributes = {
 }
 
 export default {
-  name: "ContactDetailsContainer",
+  name: "Contact-Details",
   props: [
-    "phone", "phone_as_icon",
-    "email", "email_as_icon",
+    "phone",
+    "phone_as_icon",
+    "mobile",
+    "mobile_as_icon",
+    "email",
+    "email_as_icon",
     "facebook",
     "linkedin",
     "xing",
-    "twitter", "mastodon",
+    "twitter",
+    "mastodon",
     "telegram",
     "whatsapp",
     "skype",
@@ -74,6 +93,7 @@ export default {
     // init the attributes with the component's parameters
     return {
       my_phone: this.phone,
+      my_mobile: this.mobile,
       my_email: this.email,
       my_facebook: this.facebook,
       my_linkedin: this.linkedin,
@@ -103,6 +123,8 @@ export default {
     checkAllAttributes() {
       // first handle some special cases with aliases for URL parameters
       this.checkParamAndStorage("email", "email", "email")
+      this.checkAndParsePhoneNumber("phone", "phone")
+      this.checkAndParsePhoneNumber("mobile", "mobile")
 
       // then check all other attributes
       for (const category in attributes) {
@@ -149,6 +171,32 @@ export default {
 
         // and now turn off obfuscation if using value from URL or localStorage
         this[my_category + "_plaintext"] = true
+      }
+    },
+
+    checkAndParsePhoneNumber(url_param_alias, category) {
+      const paramValue = this.$route.query[url_param_alias]
+      console.debug(url_param_alias, " = ", paramValue)
+      if (paramValue) {
+        // parse phone number into "country", "city", "number"
+        // pattern: +country-city-number-ext
+        let country, city, number
+        const match = paramValue.match(/^(?:\+(\d+)-)?(?:(\d+)-)?(.*)/)
+        if (match) {
+          country = match[1]
+          city = match[2]
+          number = match[3]
+        } else {
+          // pattern does not match, just set number
+          number = paramValue
+        }
+        // add to local storage
+        if (!country) country = null
+        if (!city) city = null
+        if (!number) number = null
+        localStorage.setItem(category + ".country", JSON.stringify(country))
+        localStorage.setItem(category + ".city", JSON.stringify(city))
+        localStorage.setItem(category + ".number", JSON.stringify(number))
       }
     },
   },
