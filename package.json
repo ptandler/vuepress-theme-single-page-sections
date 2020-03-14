@@ -19,6 +19,7 @@
   "scripts": {
     "docs:dev": "vuepress dev --debug example",
     "docs:build": "vuepress build example",
+    "release:dev": "git merge dev master && yarn version",
     "postversion": "git push --tags",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
   },
@@ -29,8 +30,12 @@
     "vuepress": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^6.6.0",
-    "lint-staged": "^9.4.3",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "lint-staged": "^10.0.8",
     "prettier": "^1.19.1"
   }
 }
