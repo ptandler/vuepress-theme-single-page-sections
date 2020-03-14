@@ -19,6 +19,7 @@
   "scripts": {
     "docs:dev": "vuepress dev --debug example",
     "docs:build": "vuepress build example",
+    "docs:serve-build": "mkdir -pv ./tmp/ && cd ./tmp && rm -f vuepress-theme-single-page-sections && ln -s ../docs vuepress-theme-single-page-sections && echo open http://localhost:5000/vuepress-theme-single-page-sections && serve",
     "release:dev": "git merge dev master && yarn version",
     "postversion": "git push --tags",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
@@ -36,6 +37,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-vue": "^6.2.2",
     "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "serve": "^11.3.0"
   }
 }
