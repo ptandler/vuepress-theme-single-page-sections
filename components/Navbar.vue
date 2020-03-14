@@ -136,7 +136,7 @@ $navbar-horizontal-padding = 1.5rem;
     border-radius: $borderRadius;
     transition: max-height $transitionSpeedTransform;
 
-    &.img-profile-navbar-small {
+    &.img-profile-navbar-small:not(:hover):not(:focus) {
       max-height: 3.6rem - 0.7rem - 0.7rem;
     }
   }
