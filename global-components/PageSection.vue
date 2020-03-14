@@ -1,6 +1,6 @@
 <template>
   <section class="page-section" :id="myId">
-    <a :href="'#'+myId" aria-hidden="true" class="header-anchor">#</a>
+    <a :href="'#' + myId" aria-hidden="true" class="header-anchor">#</a>
     <div class="section-content">
       <h2>{{ title }}</h2>
       <slot />

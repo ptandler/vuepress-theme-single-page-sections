@@ -25,7 +25,7 @@ export default {
     city: String,
     number: String,
     title: { type: String, default: "Phone" },
-    icon: { type: String, default: "phone"},
+    icon: { type: String, default: "phone" },
     scale: { type: Number, default: 1 },
     icon_only: { type: Boolean, default: false },
     obfuscate: { type: Boolean, default: true },
@@ -35,7 +35,12 @@ export default {
       return ["+", this.country || "49", " ", this.city, " ", this.number]
     },
     url() {
-      return ["tel:+", removeNonNumbers(this.country) || "49", removeNonNumbers(this.city), removeNonNumbers(this.number)]
+      return [
+        "tel:+",
+        removeNonNumbers(this.country) || "49",
+        removeNonNumbers(this.city),
+        removeNonNumbers(this.number),
+      ]
     },
   },
 }

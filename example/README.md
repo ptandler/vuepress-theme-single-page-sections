@@ -33,7 +33,7 @@ And also, you can include your contact information that will be obfuscated to re
 
 <PageSection title="Privacy-friendly Contact Information">
 
-Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will 
+Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will
 be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
 
 <Contact-Details

@@ -18,20 +18,21 @@ It also defines a couple of social icons that you can use to link to your online
 
 ## Features
 
-* Vue components for social media links as icons, with icons taken from font-awesome
-* Predefined components for: Facebook, Twitter, Telegram, LinkedIn, XING, Keybase, ORCID, GitHub, e.g.
+- Vue components for social media links as icons, with icons taken from font-awesome
+- Predefined components for: Facebook, Twitter, Telegram, LinkedIn, XING, Keybase, ORCID, GitHub, e.g.
   ```md
   <Social-LinkedIn id="petertandler" />
   <Social-GitHub id="ptandler" />
   ```
-* Vue components for contact information (email, phone) that generate obfuscated text and links to provide some challenges for harvesting bots and to avoid spam:
+- Vue components for contact information (email, phone) that generate obfuscated text and links to provide some challenges for harvesting bots and to avoid spam:
   ```md
   <Contact-Phone title="Phone" country="49" city="1234" number="56789" />
   <br/>
   <Contact-Email name="someone" domain="example.com" /> <!-- webmaster is the default name -->
   ```
-* Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will 
+- Privacy-friendly way to pass sensitive contact information (e.g. mobile number, private email, messanger name) via URL in (e.g.) email footer - that will
   be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
+
   ```md
   <Contact-Details
     :email_as_icon="false" 
@@ -48,9 +49,9 @@ It also defines a couple of social icons that you can use to link to your online
 
   If called like: https://ptandler.github.io/vuepress-theme-single-page-sections/?email=myname@example.com&skype=mySkypeId
 
-  The pattern for phone numbers is: `+country-city-number-ext` where _country_ and _city_ are optional and _ext_ has no special treatment but will be part of the number. This pattern allows consistent formatting of phone numbers. Make sure that the "+" is escaped properly as '%2B' 
+  The pattern for phone numbers is: `+country-city-number-ext` where _country_ and _city_ are optional and _ext_ has no special treatment but will be part of the number. This pattern allows consistent formatting of phone numbers. Make sure that the "+" is escaped properly as '%2B'
   (some browsers might convert it into a space instead).
-  
+
   Example https://ptandler.github.io/vuepress-theme-single-page-sections/?phone=%2B49-1234-56789-0
 
 ## Example
@@ -117,7 +118,6 @@ The `sidebarImage` is optional. If defined, this image is included in the sideba
 ## Customization
 
 The colors used are defined in `styles\palette.styl` and can be customized to fit your personal preferences.
-
 
 ## Implementation
 

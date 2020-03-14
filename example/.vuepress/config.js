@@ -1,5 +1,5 @@
 // todo can I get the theme color from some universal place?
-// should / could match $primary defined in styles/palette.styl 
+// should / could match $primary defined in styles/palette.styl
 themeColor = "#2C3E50"
 
 // generate links for favicons
