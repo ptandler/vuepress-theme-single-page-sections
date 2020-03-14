@@ -12,6 +12,7 @@
 <script>
 import "vue-awesome/icons/phone"
 import "vue-awesome/icons/mobile"
+import "vue-awesome/icons/mobile-alt"
 function removeNonNumbers(phone) {
   return phone instanceof String ? phone.replace(/\D/g, "") : phone
 }
