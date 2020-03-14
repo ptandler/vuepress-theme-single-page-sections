@@ -18,7 +18,7 @@
       :country="my_mobile.country"
       :city="my_mobile.city"
       :number="my_mobile.number"
-      :icon="my_mobile.icon || 'mobile'"
+      :icon="my_mobile.icon || 'mobile-alt'"
       :icon_only="mobile_as_icon"
       :obfuscate="!my_mobile_plaintext"
     />
