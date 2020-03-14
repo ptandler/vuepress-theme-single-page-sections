@@ -149,13 +149,13 @@ export default {
       // console.debug(this.$route.query)
       const key = name ? category + "." + name : category
       const paramValue = this.$route.query[url_param_alias || key]
-      console.debug(key, " = ", paramValue)
+      // console.debug(key, " = ", paramValue)
       if (paramValue) {
         // add to local storage
         localStorage.setItem(key, JSON.stringify(paramValue))
       }
       const storageValue = localStorage.getItem(key)
-      console.debug(key, " = ", storageValue)
+      // console.debug(key, " = ", storageValue)
       if (storageValue) {
         const value = JSON.parse(storageValue)
         // stored or passed value found, use this!
@@ -176,7 +176,7 @@ export default {
 
     checkAndParsePhoneNumber(url_param_alias, category) {
       const paramValue = this.$route.query[url_param_alias]
-      console.debug(url_param_alias, " = ", paramValue)
+      // console.debug(url_param_alias, " = ", paramValue)
       if (paramValue) {
         // parse phone number into "country", "city", "number"
         // pattern: +country-city-number-ext
@@ -205,7 +205,7 @@ export default {
     // https://router.vuejs.org/guide/essentials/dynamic-matching.html#reacting-to-params-changes
     $route(to, from) {
       // react to route changes...
-      console.info("route changed from ", from, " to ", to)
+      // console.info("route changed from ", from, " to ", to)
       this.checkAllAttributes()
     },
   },
