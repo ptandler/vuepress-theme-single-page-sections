@@ -1,24 +1,11 @@
 <template>
-  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" title="Keybase" />
+  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
-import Icon from "./Icon"
+import { generateComponent } from "./generateComponent"
 import "vue-awesome/icons/brands/keybase"
 
-export default {
-  name: "Keybase",
-  props: ["id", "scale"],
-  components: { Icon },
-  computed: {
-    iconName() {
-      return "brands/keybase"
-    },
-    iconColor() {
-      return "#3663ea"
-    },
-    url() {
-      return `https://keybase.io/${this.id}`
-    },
-  },
-}
+export default generateComponent("Keybase", "brands/keybase", "#3663ea", function urlGenerator() {
+  return `https://keybase.io/${this.id}`
+})
 </script>

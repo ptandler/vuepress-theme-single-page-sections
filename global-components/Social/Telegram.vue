@@ -1,24 +1,11 @@
 <template>
-  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" title="Telegram" />
+  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
-import Icon from "./Icon"
+import { generateComponent } from "./generateComponent"
 import "vue-awesome/icons/brands/telegram-plane"
 
-export default {
-  name: "Telegram",
-  props: ["id", "scale"],
-  components: { Icon },
-  computed: {
-    iconName() {
-      return "brands/telegram-plane"
-    },
-    iconColor() {
-      return "#0088cc"
-    },
-    url() {
-      return `https://t.me/${this.id}`
-    },
-  },
-}
+export default generateComponent("Telegram", "brands/telegram-plane", "#0088cc", function urlGenerator() {
+  return `https://t.me/${this.id}`
+})
 </script>

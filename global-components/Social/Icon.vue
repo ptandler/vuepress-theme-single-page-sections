@@ -1,7 +1,7 @@
 <template>
   <a :href="url" target="_blank" :title="title" :aria-label="title" rel="noopener noreferrer">
     <span class="icon">
-      <v-icon :name="name" :color="getColor" :scale="scale ? scale : 2" />
+      <v-icon :name="name" :color="getColor" :scale="scale" />
     </span>
     {{ text }}
   </a>
@@ -9,9 +9,16 @@
 <script>
 // import VIcon from "vue-awesome/components/Icon" // imported globally in enhanceApp.js
 
-export default {
+const Icon = {
   name: "Icon",
-  props: ["name", "color", "url", "title", "text", "scale"],
+  props: {
+    name: { type: String, required: true },
+    url: { type: String, required: true },
+    title: { type: String, required: false },
+    text: { type: String, required: false },
+    color: { type: String, required: false },
+    scale: { type: Number, default: 2 },
+  },
   // components: { VIcon },
   computed: {
     getColor() {
@@ -22,6 +29,9 @@ export default {
     },
   },
 }
+
+export default Icon
+
 </script>
 <style lang="stylus" scoped>
 

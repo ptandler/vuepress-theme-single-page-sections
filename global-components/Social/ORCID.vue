@@ -1,24 +1,11 @@
 <template>
-  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" title="ORCID" />
+  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
-import Icon from "./Icon"
+import { generateComponent } from "./generateComponent"
 import "vue-awesome/icons/brands/orcid"
 
-export default {
-  name: "ORCID",
-  props: ["id", "scale"],
-  components: { Icon },
-  computed: {
-    iconName() {
-      return "brands/orcid"
-    },
-    iconColor() {
-      return "#a6ce39"
-    },
-    url() {
-      return `https://www.researchgate.net/profile/${this.id}`
-    },
-  },
-}
+export default generateComponent("ORCID", "brands/orcid", "#a6ce39", function urlGenerator() {
+  return `https://orcid.org//${this.id}`
+})
 </script>

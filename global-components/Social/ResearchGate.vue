@@ -1,24 +1,11 @@
 <template>
-  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" title="ResearchGate" />
+  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
-import Icon from "./Icon"
+import { generateComponent } from "./generateComponent"
 import "vue-awesome/icons/brands/researchgate"
 
-export default {
-  name: "ResearchGate",
-  props: ["id", "scale"],
-  components: { Icon },
-  computed: {
-    iconName() {
-      return "brands/researchgate"
-    },
-    iconColor() {
-      return "#0077B5"
-    },
-    url() {
-      return `https://www.researchgate.net/profile/${this.id}`
-    },
-  },
-}
+export default generateComponent("ResearchGate", "brands/researchgate", "#0077B5", function urlGenerator() {
+  return `https://www.researchgate.net/profile/${this.id}`
+})
 </script>
