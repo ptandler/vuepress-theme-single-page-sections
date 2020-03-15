@@ -20,15 +20,14 @@
     "docs:dev": "vuepress dev --debug example",
     "docs:build": "vuepress build example",
     "docs:serve-build": "mkdir -pv ./tmp/ && cd ./tmp && rm -f vuepress-theme-single-page-sections && ln -s ../docs vuepress-theme-single-page-sections && echo open http://localhost:5000/vuepress-theme-single-page-sections && serve",
-    "release:dev": "git checkout master && git merge dev && yarn version",
+    "release:dev": "git checkout master && git merge dev && yarn version && git push && git checkout dev && git merge master",
     "postversion": "git push --tags",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
   },
   "dependencies": {
     "@vuepress/theme-default": "^1.2.0",
-    "vue": "^2.6.10",
     "vue-awesome": "^4.0.2",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.3.1"
   },
   "devDependencies": {
     "@vue/eslint-config-prettier": "^6.0.0",
