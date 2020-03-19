@@ -1,5 +1,5 @@
 <template>
-  <icon :name="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
+  <icon :iconName="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
 import { generateComponent } from "./generateComponent"

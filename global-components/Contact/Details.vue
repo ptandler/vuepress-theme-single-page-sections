@@ -43,6 +43,7 @@
     <Social-Skype v-if="my_skype" :id="my_skype" />
     <Social-Keybase v-if="my_keybase" :id="my_keybase" />
     <Social-GitHub v-if="my_github" :id="my_github" />
+    <Social-StackOverflow v-if="my_stackoverflow" :id="my_stackoverflow" />
     <Social-ResearchGate v-if="my_researchgate" :id="my_researchgate" />
     <Social-ORCID v-if="my_orcid" :id="my_orcid" />
   </div>
@@ -62,6 +63,7 @@ const attributes = {
   skype: null,
   keybase: null,
   github: null,
+  stackoverflow: null,
   researchgate: null,
   orcid: null,
 }

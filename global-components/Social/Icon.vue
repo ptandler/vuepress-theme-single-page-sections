@@ -1,18 +1,18 @@
 <template>
   <a :href="url" target="_blank" :title="title" :aria-label="title" rel="noopener noreferrer">
     <span class="icon">
-      <v-icon :name="name" :color="getColor" :scale="scale" />
+      <slot><v-icon v-if="iconName" :name="iconName" :color="getColor" :scale="scale"/></slot>
     </span>
     {{ text }}
   </a>
 </template>
 <script>
-// import VIcon from "vue-awesome/components/Icon" // imported globally in enhanceApp.js
+// import VIcon from "vue-awesome/components/Icon" // imported globally in enhanceApp.js to be available in md files
 
 const Icon = {
   name: "Icon",
   props: {
-    name: { type: String, required: true },
+    iconName: { type: String, required: false },
     url: { type: String, required: true },
     title: { type: String, required: false },
     text: { type: String, required: false },
@@ -31,7 +31,6 @@ const Icon = {
 }
 
 export default Icon
-
 </script>
 <style lang="stylus" scoped>
 
