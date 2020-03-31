@@ -14,7 +14,8 @@ import "vue-awesome/icons/phone"
 import "vue-awesome/icons/mobile"
 import "vue-awesome/icons/mobile-alt"
 function removeNonNumbers(phone) {
-  return phone instanceof String ? phone.replace(/\D/g, "") : phone
+  // JS is *really* a weird language in some aspects ... see https://stackoverflow.com/a/7772724/1480587 how to test for strings
+  return typeof phone === "string" || phone instanceof String ? phone.replace(/\D/g, "") : phone
 }
 export default {
   /**

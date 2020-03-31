@@ -39,23 +39,25 @@ export default {
      */
     maybeObfuscatedHref() {
       let counter = 1
-      return this.url instanceof Array
+      const url = this.url
+      return url instanceof Array
         ? this.obfuscate
           ? "javascript:location.href=" +
-            JSON.stringify(this.url.slice(0).reverse()).replace(/","/g, '", /*' + Date.now() * counter++ + '*/"') +
+            JSON.stringify(url.slice(0).reverse()).replace(/","/g, '", /*' + Date.now() * counter++ + '*/"') +
             '.reverse().join("")'
-          : this.url.join("")
-        : this.url
+          : url.join("")
+        : url
     },
     mayBeObfuscatedText() {
       let counter = 1
-      return this.text instanceof Array
+      const text = this.text
+      return text instanceof Array
         ? this.obfuscate
-          ? this.text
+          ? text
               .map((str) => `<span class="b">${str}</span>`)
               .join("<span class='a'>" + Date.now() * counter++ + "</span>")
-          : this.text.join("")
-        : this.text
+          : text.join("")
+        : text
     },
   },
 }
