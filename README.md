@@ -87,9 +87,11 @@ To pass phone numbers, the pattern for phone numbers is: `+country-city-number-e
 
 You can pass a `phone` and a `mobile` number.
 
-Example https://ptandler.github.io/vuepress-theme-single-page-sections/?phone=%2B49-1234-56789-0
+And you can define a custom title for phone and mobile: `phone.title`.
 
-See [`Contact/Details.vue`](global-components/Contact/Details.vue).
+Example https://ptandler.github.io/vuepress-theme-single-page-sections/?phone=%2B49-1234-56789-0&phone.title=Telefon
+
+See [`Contact/Details.vue`](global-components/Contact/Details.vue) for the list of supported parameters (in `const attributes`).
 
 # Example
 
