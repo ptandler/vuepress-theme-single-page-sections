@@ -5841,11 +5841,6 @@ normalize-url@^4.1.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
 
-noto-color-emoji@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/noto-color-emoji/-/noto-color-emoji-1.0.1.tgz#8843422fcad5e329cca06605e3016510db6fe3b5"
-  integrity sha512-Vu53On8Q4ZEiqU25flsxdGhcK0qHJhpCg6AgFYm91NyGCUOn+cQGCA+iyniQJV7yGMZHqYQ743K+HmZ+aOOVKw==
-
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"

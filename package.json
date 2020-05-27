@@ -23,11 +23,11 @@
     "release:dev": "git push & git checkout master && git merge dev && yarn version && git push && git checkout dev && git merge master",
     "publish:dev": "git push & git checkout master && git merge dev && yarn publish && git push && git checkout dev && git merge master",
     "postversion": "git push --tags",
+    "minimizeNotoColorEmojiFont": "pyftsubset ./fonts/NotoColorEmoji.ttf --text=🇬🇧󠁧󠁢󠁥󠁮󠁧󠁿🇩🇪 --output-file=./fonts/NotoColorEmoji-en-de.ttf",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
   },
   "dependencies": {
     "@vuepress/theme-default": "^1.2.0",
-    "noto-color-emoji": "^1.0.1",
     "vue-awesome": "^4.0.2",
     "vue-svg-loader": "^0.16.0",
     "vuepress": "^1.3.1"
