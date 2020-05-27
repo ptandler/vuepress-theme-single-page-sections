@@ -1,5 +1,5 @@
 const slugify = require("@vuepress/shared-utils/lib/slugify.js")
-const path = require('path')
+const path = require("path")
 
 function addSectionHeadings(content, $page) {
   let match
@@ -36,7 +36,7 @@ function addSectionHeadings(content, $page) {
 module.exports = {
   extend: "@vuepress/theme-default",
   alias: {
-    fonts: path.resolve(__dirname, "fonts")
+    fonts: path.resolve(__dirname, "fonts"),
   },
   plugins: [
     [

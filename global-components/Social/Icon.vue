@@ -1,7 +1,7 @@
 <template>
   <a :href="url" target="_blank" :title="title" :aria-label="title" rel="noopener noreferrer">
     <span class="icon">
-      <slot><v-icon v-if="iconName" :name="iconName" :color="getColor" :scale="scale"/></slot>
+      <slot><v-icon v-if="iconName" :name="iconName" :color="getColor" :scale="scale" /></slot>
     </span>
     {{ text }}
   </a>
