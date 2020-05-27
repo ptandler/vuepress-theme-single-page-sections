@@ -20,8 +20,10 @@
     "docs:dev": "vuepress dev --debug example",
     "docs:build": "vuepress build example",
     "docs:serve-build": "mkdir -pv ./tmp/ && cd ./tmp && rm -f vuepress-theme-single-page-sections && ln -s ../docs vuepress-theme-single-page-sections && echo open http://localhost:5000/vuepress-theme-single-page-sections && serve",
-    "release:dev": "git push & git checkout master && git merge dev && yarn version && git push && git checkout dev && git merge master",
-    "publish:dev": "git push & git checkout master && git merge dev && yarn publish && git push && git checkout dev && git merge master",
+    "release-patch:dev": "git push && git checkout master && git merge dev && yarn version --patch && git push && git checkout dev && git merge master",
+    "publish-patch:dev": "git push && git checkout master && git merge dev && yarn publish --patch && git push && git checkout dev && git merge master",
+    "release-minor:dev": "git push && git checkout master && git merge dev && yarn version --minor && git push && git checkout dev && git merge master",
+    "publish-minor:dev": "git push && git checkout master && git merge dev && yarn publish --minor && git push && git checkout dev && git merge master",
     "postversion": "git push --tags",
     "minimizeNotoColorEmojiFont": "pyftsubset ./fonts/NotoColorEmoji.ttf --text=🇬🇧󠁧󠁢󠁥󠁮󠁧󠁿🇩🇪 --output-file=./fonts/NotoColorEmoji-en-de.ttf",
     "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
