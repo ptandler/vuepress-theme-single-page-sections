@@ -154,7 +154,7 @@ export default {
       color: $sidebarTextColor;
       font-weight: bold;
       font-size: 1.1em;
-      line-height: 1.7;
+      line-height: 1;
       transition: color $transitionSpeedColor ease;
 
       &:hover {
