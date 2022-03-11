@@ -56,34 +56,34 @@ module.exports = {
     anchor: {
       permalink: false,
     },
-
-    extendMarkdown: (md) => {
-      // console.log("md options:", md.options)
-      // console.log("md renderer rules:", md.renderer.rules)
-      // todo can I somehow detect the language of the current page here? is this instantiated per page?
-      md.set({
-        xhtmlOut: true,
-        linkify: true,
-        typographer: true,
-        // Double + single quotes replacement pairs, when typographer enabled,
-        // and smartquotes on. Could be either a String or an Array.
-        //
-        // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
-        // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
-        // quotes: '„“‚‘',
-        // quotes: '“”‘’',
-      })
-      // md.use(require('markdown-it-xxx'))
-      /*
-      var twemoji = require("twemoji");
-      md.renderer.rules.emoji = function(token, idx) {
-        return twemoji.parse(token[idx].content, {
-          folder: "svg",
-          ext: ".svg"
-        });
-      };
- */
-    },
   },
   serviceWorker: true,
+
+  extendsMarkdown: (md) => {
+    // console.log("md options:", md.options)
+    // console.log("md renderer rules:", md.renderer.rules)
+    // todo can I somehow detect the language of the current page here? is this instantiated per page?
+    md.set({
+      xhtmlOut: true,
+      linkify: true,
+      typographer: true,
+      // Double + single quotes replacement pairs, when typographer enabled,
+      // and smartquotes on. Could be either a String or an Array.
+      //
+      // For example, you can use '«»„“' for Russian, '„“‚‘' for German,
+      // and ['«\xA0', '\xA0»', '‹\xA0', '\xA0›'] for French (including nbsp).
+      // quotes: '„“‚‘',
+      // quotes: '“”‘’',
+    })
+    // md.use(require('markdown-it-xxx'))
+    /*
+    var twemoji = require("twemoji");
+    md.renderer.rules.emoji = function(token, idx) {
+      return twemoji.parse(token[idx].content, {
+        folder: "svg",
+        ext: ".svg"
+      });
+    };
+*/
+  },
 }

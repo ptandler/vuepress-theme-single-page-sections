@@ -1,11 +1,12 @@
+const { path } = require('@vuepress/utils')
 const slugify = require("@vuepress/shared-utils/lib/slugify.js")
-const path = require("path")
+
+const sectionRE = RegExp(/<PageSection([^>]*)>/, "g"),
+  attributesRE = RegExp(/([a-z0-9]+)="([^"]*)"/, "ig")
 
 function addSectionHeadings(content, $page) {
   let match
   // make sure the pattern has the global flag
-  const sectionRE = RegExp(/<PageSection([^>]*)>/, "g"),
-    attributesRE = RegExp(/([a-z0-9]+)="([^"]*)"/, "ig")
   // console.info($page.headers)
   while ((match = sectionRE.exec(content))) {
     const attibutes = []
@@ -47,8 +48,15 @@ module.exports = {
         after: "</PageSection>",
       },
     ],
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './global-components'),
+      },
+    ],
   ],
-  extendPageData($page) {
+  clientAppEnhanceFiles: path.resolve(__dirname, './clientAppEnhance.ts'),
+  extendsPage($page) {
     const {
       _filePath, // file's absolute path
       _computed, // access the client global computed mixins at build time, e.g _computed.$localePath.

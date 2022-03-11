@@ -20,6 +20,7 @@ The template provides predefined Vue components that you can easily use to link 
 <Social-Keybase id="myid" />
 <Social-ResearchGate id="myid" />
 <Social-ORCID id="myid" />
+<Social-Nextcloud id="myid" />
 
 And also, you can include your contact information that will be obfuscated to reduce spam:
 
@@ -37,7 +38,7 @@ Privacy-friendly way to pass sensitive contact information (e.g. mobile number, 
 be included in the homepage exactly as the other icons. Some information can be passed directly in VuePress:
 
 <Contact-Details
-    :email_as_icon="false" 
+    :email_as_icon="false"
     :phone_as_icon="false"
     linkedin="myid"
     xing="myid"

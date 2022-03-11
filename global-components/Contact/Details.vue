@@ -46,6 +46,7 @@
     <Social-StackOverflow v-if="my_stackoverflow" :id="my_stackoverflow" />
     <Social-ResearchGate v-if="my_researchgate" :id="my_researchgate" />
     <Social-ORCID v-if="my_orcid" :id="my_orcid" />
+    <Social-Nextcloud v-if="my_nextcloud" :id="my_nextcloud" />
   </div>
 </template>
 <script>
@@ -66,6 +67,7 @@ const attributes = {
   stackoverflow: null,
   researchgate: null,
   orcid: null,
+  nextcloud: null,
 }
 
 export default {
@@ -90,6 +92,7 @@ export default {
     "stackoverflow",
     "researchgate",
     "orcid",
+    "nextcloud",
   ],
   data() {
     // init the attributes with the component's parameters
@@ -110,6 +113,7 @@ export default {
       my_stackoverflow: this.stackoverflow,
       my_researchgate: this.researchgate,
       my_orcid: this.orcid,
+      my_nextcloud: this.nextcloud,
     }
   },
   mounted() {

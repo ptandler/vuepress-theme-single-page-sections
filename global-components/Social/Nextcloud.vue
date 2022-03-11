@@ -4,10 +4,10 @@
   </icon>
 </template>
 <script>
-import { generateCompgenerateComponentWithEmbeddedLogoonent } from "./generateComponent"
+import { generateComponentWithEmbeddedLogo } from "./generateComponent"
 import logo from "./nextcloud-logo.svg"
-// todo pass null as urlGenerator to get url propery instead of id
+// todo pass null as urlGenerator to get url property instead of id
 export default generateComponentWithEmbeddedLogo("Nextcloud", logo, function urlGenerator() {
-  return `${this.id}`
+  return `https://nextcloud.com/sharing/#${this.id}`
 })
 </script>
