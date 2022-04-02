@@ -1,47 +1,71 @@
 {
   "name": "vuepress-theme-single-page-sections",
   "version": "1.1.4",
+  "private": false,
   "description": "A VuePress theme that extends the default theme by sections to create single page layouts with several sections combined on one page",
+  "author": "Peter Tandler (https://github.com/ptandler)",
+  "scripts": {
+    "lint": "vue-cli-service lint",
+    "docs:build": "vuepress build example",
+    "docs:dev": "vuepress dev example",
+    "docs:serve-build": "mkdir -pv ./tmp/ && cd ./tmp && rm -f vuepress-theme-single-page-sections && ln -s ../docs vuepress-theme-single-page-sections && echo open http://localhost:5000/vuepress-theme-single-page-sections && serve",
+    "minimizeNotoColorEmojiFont": "pyftsubset ./fonts/NotoColorEmoji.ttf --text=🇬🇧󠁧󠁢󠁥󠁮󠁧󠁿🇩🇪 --output-file=./fonts/NotoColorEmoji-en-de.ttf",
+    "postversion": "git push --tags",
+    "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}",
+    "publish-minor:dev": "git push && git checkout master && git merge dev && yarn publish --minor && git push && git checkout dev && git merge master",
+    "publish-patch:dev": "git push && git checkout master && git merge dev && yarn publish --patch && git push && git checkout dev && git merge master",
+    "release-minor:dev": "git push && git checkout master && git merge dev && yarn version --minor && git push && git checkout dev && git merge master",
+    "release-patch:dev": "git push && git checkout master && git merge dev && yarn version --patch && git push && git checkout dev && git merge master"
+  },
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ptandler/vuepress-theme-single-page-sections.git"
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.3.0",
+    "@fortawesome/free-brands-svg-icons": "^6.0.0",
+    "@fortawesome/free-regular-svg-icons": "^6.0.0",
+    "@fortawesome/free-solid-svg-icons": "^6.0.0",
+    "@fortawesome/vue-fontawesome": "^3.0.0-5",
+    "vue": "^3.2.31"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/eslint-parser": "^7.17.0",
+    "@rollup/plugin-alias": "^3.1.9",
+    "@vue/cli-plugin-eslint": "~5.0.1",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vuepress/markdown": "^2.0.0-beta.36",
+    "@vuepress/plugin-active-header-links": "^2.0.0-beta.36",
+    "@vuepress/plugin-register-components": "^2.0.0-beta.36",
+    "@vuepress/plugin-theme-data": "^2.0.0-beta.36",
+    "@vuepress/theme-default": "^2.0.0-beta.36",
+    "@vuepress/utils": "^2.0.0-beta.35",
+    "eslint": "^8.10.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
+    "lint-staged": "^12.3.5",
+    "prettier": "^2.5.1",
+    "rollup": "^2.70.0",
+    "serve": "^13.0.2",
+    "vite-svg-loader": "^3.1.2",
+    "vuepress": "^2.0.0-beta.36"
+  },
+  "bugs": "https://github.com/ptandler/vuepress-theme-single-page-sections/issues",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
   },
   "homepage": "https://github.com/ptandler/vuepress-theme-single-page-sections#readme",
-  "bugs": "https://github.com/ptandler/vuepress-theme-single-page-sections/issues",
-  "author": "Peter Tandler (https://github.com/ptandler)",
   "keywords": [
     "vue",
     "vuepress"
   ],
   "license": "MIT",
-  "private": false,
-  "scripts": {
-    "docs:dev": "vuepress dev example",
-    "docs:build": "vuepress build example",
-    "docs:serve-build": "mkdir -pv ./tmp/ && cd ./tmp && rm -f vuepress-theme-single-page-sections && ln -s ../docs vuepress-theme-single-page-sections && echo open http://localhost:5000/vuepress-theme-single-page-sections && serve",
-    "release-patch:dev": "git push && git checkout master && git merge dev && yarn version --patch && git push && git checkout dev && git merge master",
-    "publish-patch:dev": "git push && git checkout master && git merge dev && yarn publish --patch && git push && git checkout dev && git merge master",
-    "release-minor:dev": "git push && git checkout master && git merge dev && yarn version --minor && git push && git checkout dev && git merge master",
-    "publish-minor:dev": "git push && git checkout master && git merge dev && yarn publish --minor && git push && git checkout dev && git merge master",
-    "postversion": "git push --tags",
-    "minimizeNotoColorEmojiFont": "pyftsubset ./fonts/NotoColorEmoji.ttf --text=🇬🇧󠁧󠁢󠁥󠁮󠁧󠁿🇩🇪 --output-file=./fonts/NotoColorEmoji-en-de.ttf",
-    "prettier": "prettier --write **/*.{ts,js,vue,css,less,scss,html,json,md}"
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
   },
-  "dependencies": {
-    "vue-awesome": "^4.5.0"
-  },
-  "devDependencies": {
-    "@vuepress/plugin-active-header-links": "^2.0.0-beta.35",
-    "@vuepress/plugin-register-components": "^2.0.0-beta.35",
-    "@vuepress/shared-utils": "^1.0.0-rc.1",
-    "@vuepress/theme-default": "^2.0.0-beta.35",
-    "@vuepress/utils": "^2.0.0-beta.35",
-    "lint-staged": "^10.5.4",
-    "prettier": "^2.5.1",
-    "serve": "^11.3.2",
-    "vue-svg-loader": "^0.16.0",
-    "vue-template-compiler": "^2.6.14",
-    "vuepress": "^2.0.0-beta.35"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptandler/vuepress-theme-single-page-sections.git"
   }
 }

@@ -1,6 +1,6 @@
 # Single Page VuePress Theme
 
-This these extends the VuePress default theme `@vuepress/theme-default` for a layout for single page sites that contain several sections, each covering at least one view height.
+This theme extends the VuePress default theme `@vuepress/theme-default` for a layout for single page sites that contain several sections, each covering at least one view height.
 I think this is easier described with a picture:
 
 **Desktop version:**
@@ -15,6 +15,26 @@ I think this is easier described with a picture:
 I developed this theme as the basis for my personal homepage. So it can well be used to put your resume online.
 
 It also defines a couple of social icons that you can use to link to your online profiles.
+
+## ToDo Port to VuePress 2 / Vue 3
+
+- does vue-awesome work with Vue3?
+  - what about https://github.com/Justineo/vue-awesome vs https://github.com/FortAwesome/vue-fontawesome
+    - ensure only used components are imported!
+- eslint correct?
+  - "ESLint: no babel config file detected for ...vue"
+- adjust to new theme!
+  - stylus -> scss (colors etc)
+- [x] $themeConfig in Icon.vue
+- [ ] sideBar TOC not working
+- [ ] sideBar config not working (e.g. image)
+- [ ] `<<<` file import not working
+- [ ] $set is not a function (when using URL parameters)
+- [ ] nextcloud icon click ...
+- [ ] vue-svg loader with rollup/vite ...
+- [ ] convert to TS ...!??
+- [ ] Contact Email - add props for subject and body to pass via URL
+- [ ] add favicon.ico (et al) to example/README.md
 
 ## Features
 
@@ -67,7 +87,7 @@ Put contact information that should be available to the public directly in your 
 
 ```md
 <Contact-Details
-  :email_as_icon="false" 
+  :email_as_icon="false"
   :phone_as_icon="false"
   :mobile_as_icon="false"
   linkedin="myLinkedInId"
@@ -119,12 +139,12 @@ module.exports = {
   theme: "single-page-sections",
   themeConfig: {
     sidebar: "auto",
-    search: false,
-    smoothScroll: true,
+    // search: false,
+    // smoothScroll: true,
     social: { monochrome_icons: false },
-    editLinks: false,
-    nextLinks: false,
-    prevLinks: false,
+    editLink: false,
+    // nextLinks: false,
+    // prevLinks: false,
   },
 }
 ```

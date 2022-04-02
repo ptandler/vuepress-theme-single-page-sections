@@ -84,7 +84,7 @@ const Navbar = extend({}, ParentNavbar, {
 export default Navbar
 </script>
 
-<style lang="stylus">
+<style lang="scss">
 $navbar-vertical-padding = 0.7rem;
 $navbar-horizontal-padding = 1.5rem;
 

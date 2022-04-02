@@ -3,9 +3,12 @@
 </template>
 <script>
 import { generateComponent } from "./generateComponent"
-import "vue-awesome/icons/brands/facebook"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faFacebook } from "@fortawesome/free-brands-svg-icons"
 
-export default generateComponent("Facebook", "brands/facebook", "#3B5998", function urlGenerator() {
+library.add(faFacebook)
+
+export default generateComponent("Facebook", ["fab", "facebook"], "#3B5998", function urlGenerator() {
   return `https://www.facebook.com/${this.id}`
 })
 </script>

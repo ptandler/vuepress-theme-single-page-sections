@@ -2,20 +2,15 @@
   <icon :iconName="iconName" :color="iconColor" :url="url" :scale="scale" :title="title" :text="text" />
 </template>
 <script>
-import Icon from "./Icon"
-import "vue-awesome/icons/brands/mastodon"
+import { generateComponent } from "./generateComponent"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faMastodon } from "@fortawesome/free-brands-svg-icons"
 
-const name = "Mastodon"
-export default {
-  name: name,
-  props: {
-    url: { type: String, required: true },
-    title: { type: String, default: name },
-    scale: { type: Number, required: false },
-    text: { type: String, required: false },
-    iconName: { type: String, default: "brands/mastodon" },
-    iconColor: { type: String, default: "#2b90d9" },
-  },
-  components: { Icon },
-}
+library.add(faMastodon)
+
+export default generateComponent("Mastodon", ["fab", "mastodon"], "#2b90d9", function urlGenerator() {
+  // not sure which is the correct URL to use ...
+  // https://stackoverflow.com/questions/49955335/how-to-link-to-a-fediverse-mastodon-account-in-html
+  return `https://${this.host}/users/${this.id}/remote_follow`
+}, { host: { type: String, default: "mastodon.social" } })
 </script>

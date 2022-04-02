@@ -45,12 +45,12 @@ module.exports = {
   theme: "single-page-sections",
   themeConfig: {
     sidebar: "auto",
-    search: false,
-    smoothScroll: true,
+    // search: false,
+    // smoothScroll: true,
     social: { monochrome_icons: false },
-    editLinks: false,
-    nextLinks: false,
-    prevLinks: false,
+    editLink: false,
+    // nextLinks: false,
+    // prevLinks: false,
   },
   markdown: {
     anchor: {

@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"My Resume",lang:"en-US",frontmatter:{title:"My Resume",pageClass:"sections-layout",sidebarImage:"/dummy-person.svg",sidebarImageAlt:"Dummy picture of a person"},excerpt:"",headers:[],git:{updatedTime:164699566e4,contributors:[{name:"Peter Tandler",email:"p.github@tandlers.de",commits:8}]},filePathRelative:"README.md"};export{e as data};

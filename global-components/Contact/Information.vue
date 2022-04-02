@@ -8,18 +8,18 @@
     :scale="scale"
   />
   <a v-else :href="maybeObfuscatedHref" target="_blank" :title="title || mayBeObfuscatedText">
-    <v-icon :name="icon" scale="1" class="inline-icon" />
+    <fa-icon :icon="icon" scale="1" class="inline-icon" />
     <span v-html="mayBeObfuscatedText" class="protected" />
   </a>
 </template>
 <script>
-import Icon from "../Social/Icon"
+import Icon from "../Social/Icon.vue"
 export default {
   name: "Contact-Information",
   components: { Icon },
   props: {
     text: {},
-    icon: String,
+    icon: Array,
     url: {},
     title: String,
     icon_only: Boolean,
@@ -62,18 +62,19 @@ export default {
   },
 }
 </script>
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .fa-icon {
   // vertical-align: text-bottom;
   vertical-align: middle;
 }
 
 a .inline-icon {
-  width: 2em
+  width: 2em;
 }
 
 // using >>> combinator to provide css for generated html and by-pass css scoping, see https://stackoverflow.com/a/44849563/1480587
-.protected >>> .a {
+// Vue 3 `>>>` ==> `:deep()` https://stackoverflow.com/a/63986379/1480587 & https://vuejs.org/api/sfc-css-features.html#deep-selectors
+.protected :deep(.a) {
   display: none;
 }
 </style>

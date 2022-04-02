@@ -1,18 +1,22 @@
 <template>
   <a :href="url" target="_blank" :title="title" :aria-label="title" rel="noopener noreferrer">
     <span class="icon">
-      <slot><v-icon v-if="iconName" :name="iconName" :color="getColor" :scale="scale" /></slot>
+      <slot><fa-icon v-if="iconName" :icon="iconName" :color="getColor" :scale="scale" /></slot>
     </span>
     {{ text }}
   </a>
 </template>
 <script>
-// import VIcon from "vue-awesome/components/Icon" // imported globally in enhanceApp.js to be available in md files
+// imported globally in enhanceApp.js to be available in md files:
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+import { useThemeData } from "@vuepress/plugin-theme-data/lib/client"
 
 const Icon = {
   name: "Icon",
   props: {
-    iconName: { type: String, required: false },
+    iconName: { type: Array, required: false },
     url: { type: String, required: true },
     title: { type: String, required: false },
     text: { type: String, required: false },
@@ -22,7 +26,8 @@ const Icon = {
   // components: { VIcon },
   computed: {
     getColor() {
-      if (this.$themeConfig && this.$themeConfig.social && this.$themeConfig.social.monochrome_icons) {
+      const themeData = useThemeData().value
+      if (themeData && themeData.social && themeData.social.monochrome_icons) {
         return null // use default color
       }
       return this.color
@@ -32,10 +37,11 @@ const Icon = {
 
 export default Icon
 </script>
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
+@import "@styles/palette.scss";
 
 .theme-default-content:not(.custom) a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .icon {

@@ -10,9 +10,15 @@
   />
 </template>
 <script>
-import "vue-awesome/icons/phone"
-import "vue-awesome/icons/mobile"
-import "vue-awesome/icons/mobile-alt"
+// import "vue-awesome/icons/phone"
+// import "vue-awesome/icons/mobile"
+// import "vue-awesome/icons/mobile-alt"
+
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faPhone, faMobile, faMobileAlt, faMobilePhone, faMobileAndroid } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faPhone, faMobile, faMobileAlt, faMobilePhone, faMobileAndroid)
+
 function removeNonNumbers(phone) {
   // JS is *really* a weird language in some aspects ... see https://stackoverflow.com/a/7772724/1480587 how to test for strings
   return typeof phone === "string" || phone instanceof String ? phone.replace(/\D/g, "") : phone
@@ -27,7 +33,7 @@ export default {
     city: String,
     number: String,
     title: { type: String, default: "Phone" },
-    icon: { type: String, default: "phone" },
+    icon: { type: Array, default: ["fas", "phone"] },
     scale: { type: Number, default: 1 },
     icon_only: { type: Boolean, default: false },
     obfuscate: { type: Boolean, default: true },
@@ -38,7 +44,8 @@ export default {
     },
     url() {
       return [
-        "tel:+",
+        "te",
+        "l:+",
         removeNonNumbers(this.country) || "49",
         removeNonNumbers(this.city),
         removeNonNumbers(this.number),

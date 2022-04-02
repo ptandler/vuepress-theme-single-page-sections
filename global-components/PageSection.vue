@@ -8,7 +8,8 @@
   </section>
 </template>
 <script>
-const slugify = require("@vuepress/shared-utils/lib/slugify.js")
+// const slugify = require("@vuepress/markdown/lib/utils/slugify")
+import { slugify } from "@vuepress/markdown/lib/utils/slugify"
 
 export default {
   name: "PageSection",
@@ -20,7 +21,7 @@ export default {
   },
 }
 </script>
-<style lang="stylus">
+<style lang="scss">
 .theme-default-content {
   scroll-snap-type: y proximity;
 

@@ -3,9 +3,13 @@
 </template>
 <script>
 import { generateComponent } from "./generateComponent"
-import "vue-awesome/icons/brands/researchgate"
+// import "vue-awesome/icons/brands/researchgate"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faResearchgate } from "@fortawesome/free-brands-svg-icons"
 
-export default generateComponent("ResearchGate", "brands/researchgate", "#0077B5", function urlGenerator() {
+library.add(faResearchgate)
+
+export default generateComponent("ResearchGate", ["fab", "researchgate"], "#0077B5", function urlGenerator() {
   return `https://www.researchgate.net/profile/${this.id}`
 })
 </script>

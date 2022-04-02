@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="scss">
 .sidebar-group {
   color: $sidebarHeadingTextColor;
 }
@@ -125,7 +125,8 @@ export default {
       font-weight: 600;
     }
 
-    .nav-item, .repo-link {
+    .nav-item,
+    .repo-link {
       display: block;
       padding: 0.5rem 1.5rem;
       font-size: 1.1em;
@@ -139,7 +140,8 @@ export default {
     transition: color $transitionSpeedColor ease;
 
     &.clickable {
-      &:hover, &.active {
+      &:hover,
+      &.active {
         color: $sidebarAccentColor;
       }
     }

@@ -1,5 +1,6 @@
-const { path } = require('@vuepress/utils')
-const slugify = require("@vuepress/shared-utils/lib/slugify.js")
+const { path } = require("@vuepress/utils")
+const slugify = require("@vuepress/markdown/lib/utils/slugify")
+const svgLoader = require("vite-svg-loader")
 
 const sectionRE = RegExp(/<PageSection([^>]*)>/, "g"),
   attributesRE = RegExp(/([a-z0-9]+)="([^"]*)"/, "ig")
@@ -9,7 +10,7 @@ function addSectionHeadings(content, $page) {
   // make sure the pattern has the global flag
   // console.info($page.headers)
   while ((match = sectionRE.exec(content))) {
-    const attibutes = []
+    let match_attr
     let id = null,
       title = null
     while ((match_attr = attributesRE.exec(match[1]))) {
@@ -35,28 +36,38 @@ function addSectionHeadings(content, $page) {
 }
 
 module.exports = {
-  extend: "@vuepress/theme-default",
+  extends: "@vuepress/theme-default",
   alias: {
-    fonts: path.resolve(__dirname, "fonts"),
+    "@components": path.resolve(__dirname, "global-components"),
+    "@fonts": path.resolve(__dirname, "fonts"),
+    "@styles": path.resolve(__dirname, "styles"),
   },
   plugins: [
+    /*
+        [
+          "@vuepress/plugin-container",
+          {
+            type: "section",
+            before: (info) => `<PageSection title="${info}">`,
+            after: "</PageSection>",
+          },
+        ],
+    */
     [
-      "vuepress-plugin-container",
+      "@vuepress/register-components",
       {
-        type: "section",
-        before: (info) => `<PageSection title="${info}">`,
-        after: "</PageSection>",
-      },
-    ],
-    [
-      '@vuepress/register-components',
-      {
-        componentsDir: path.resolve(__dirname, './global-components'),
+        componentsDir: path.resolve(__dirname, "./global-components"),
       },
     ],
   ],
-  clientAppEnhanceFiles: path.resolve(__dirname, './clientAppEnhance.ts'),
+  clientAppEnhanceFiles: path.resolve(__dirname, "./clientAppEnhance.ts"),
+  bundlerConfig: {
+    viteOptions: {
+      plugins: [svgLoader()],
+    },
+  },
   extendsPage($page) {
+    /*
     const {
       _filePath, // file's absolute path
       _computed, // access the client global computed mixins at build time, e.g _computed.$localePath.
@@ -67,8 +78,9 @@ module.exports = {
       regularPath, // current page's default link (follow the file hierarchy)
       path, // current page's real link (use regularPath when permalink does not exist)
     } = $page
+*/
 
-    addSectionHeadings(_strippedContent, $page)
+    addSectionHeadings($page._strippedContent, $page)
   },
   chainWebpack: (config) => {
     const svgRule = config.module.rule("svg")

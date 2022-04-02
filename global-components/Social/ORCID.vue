@@ -3,10 +3,14 @@
 </template>
 <script>
 import { generateComponent } from "./generateComponent"
-import "vue-awesome/icons/brands/orcid"
+// import "vue-awesome/icons/brands/orcid"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faOrcid } from "@fortawesome/free-brands-svg-icons"
+
+library.add(faOrcid)
 
 // pending: use orcid-logo.svg
-export default generateComponent("ORCID", "brands/orcid", "#a6ce39", function urlGenerator() {
+export default generateComponent("ORCID", ["fab", "orcid"], "#a6ce39", function urlGenerator() {
   return `https://orcid.org//${this.id}`
 })
 </script>

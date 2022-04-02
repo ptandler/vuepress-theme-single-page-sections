@@ -3,9 +3,12 @@
 </template>
 <script>
 import { generateComponent } from "./generateComponent"
-import "vue-awesome/icons/brands/linkedin-in"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons"
 
-export default generateComponent("LinkedIn", "brands/linkedin-in", "#0077B5", function urlGenerator() {
+library.add(faLinkedinIn)
+
+export default generateComponent("LinkedIn", ["fab", "linkedin-in"], "#0077B5", function urlGenerator() {
   return `https://www.linkedin.com/in/${this.id}/`
 })
 </script>

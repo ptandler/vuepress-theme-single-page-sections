@@ -10,7 +10,11 @@
   />
 </template>
 <script>
-import "vue-awesome/icons/envelope"
+// import "vue-awesome/icons/envelope"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+
+library.add(faEnvelope)
 
 /**
  * If Prop "email" is defined, it is used as plain text email address,
@@ -21,7 +25,7 @@ export default {
   props: ["email", "name", "domain", "title", "scale", "icon_only", "obfuscate"],
   data() {
     return {
-      icon: "envelope",
+      icon: ["fas", "envelope"],
     }
   },
   computed: {
@@ -33,7 +37,8 @@ export default {
         return "mailto:" + this.email
       }
       let url = this.text.slice(0)
-      url.unshift("mailto:")
+      url.unshift("lto:")
+      url.unshift("mai")
       return url
     },
   },
