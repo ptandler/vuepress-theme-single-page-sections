@@ -170,7 +170,8 @@ export default {
           this[my_category] = {}
         }
         if (name) {
-          this.$set(this[my_category], name, value)
+          // this.$set(this[my_category], name, value) // this was Vue 2 ... removed and no longer required
+          this[my_category][name] = value
         } else {
           this[my_category] = value
         }

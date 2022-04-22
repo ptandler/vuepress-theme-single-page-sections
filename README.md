@@ -29,7 +29,7 @@ It also defines a couple of social icons that you can use to link to your online
 - [ ] sideBar TOC not working
 - [ ] sideBar config not working (e.g. image)
 - [ ] `<<<` file import not working
-- [ ] $set is not a function (when using URL parameters)
+- [x] $set is not a function (when using URL parameters)
 - [ ] nextcloud icon click ...
 - [ ] vue-svg loader with rollup/vite ...
 - [ ] convert to TS ...!??
